@@ -1,0 +1,8 @@
+*_ReSharper*
+*.user
+*.suo
+*.dbmdl
+*.schemaview
+*bin/
+*obj/
+*debug/

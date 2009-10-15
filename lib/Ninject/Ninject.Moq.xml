@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ninject.Moq</name>
+    </assembly>
+    <members>
+        <member name="T:Ninject.Moq.MockingKernel">
+            <summary>
+            A kernel that will create mocked instances (via Moq) for any service that is
+            requested for which no binding is registered.
+            </summary>
+        </member>
+        <member name="M:Ninject.Moq.MockingKernel.Reset">
+            <summary>
+            Clears the kernel's cache, immediately deactivating all activated instances regardless of scope.
+            This does not remove any modules, extensions, or bindings.
+            </summary>
+        </member>
+        <member name="M:Ninject.Moq.MockingKernel.HandleMissingBinding(System.Type)">
+            <summary>
+            Attempts to handle a missing binding for a service.
+            </summary>
+            <param name="service">The service.</param>
+            <returns><c>True</c> if the missing binding can be handled; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="T:Ninject.Moq.MockProvider">
+            <summary>
+            Creates mocked instances via Moq.
+            </summary>
+        </member>
+        <member name="M:Ninject.Moq.MockProvider.#ctor(Ninject.Injection.IInjectorFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ninject.Moq.MockProvider"/> class.
+            </summary>
+            <param name="injectorFactory">The injector factory component.</param>
+        </member>
+        <member name="M:Ninject.Moq.MockProvider.Create(Ninject.Activation.IContext)">
+            <summary>
+            Creates an instance within the specified context.
+            </summary>
+            <param name="context">The context.</param>
+            <returns>The created instance.</returns>
+        </member>
+        <member name="M:Ninject.Moq.MockProvider.GetCreationCallback">
+            <summary>
+            Gets a callback that creates an instance of the <see cref="T:Ninject.Moq.MockProvider"/>.
+            </summary>
+            <returns>The created callback.</returns>
+        </member>
+        <member name="P:Ninject.Moq.MockProvider.Type">
+            <summary>
+            Gets the type (or prototype) of instances the provider creates.
+            </summary>
+        </member>
+        <member name="P:Ninject.Moq.MockProvider.InjectorFactory">
+            <summary>
+            Gets the injector factory component.
+            </summary>
+        </member>
+        <member name="T:Ninject.Moq.ExtensionsForBindingSyntax">
+            <summary>
+            Extensions for the fluent binding syntax API.
+            </summary>
+        </member>
+        <member name="M:Ninject.Moq.ExtensionsForBindingSyntax.ToMock``1(Ninject.Syntax.IBindingToSyntax{``0})">
+            <summary>
+            Indicates that the service should be bound to a mocked instance of the specified type.
+            </summary>
+            <typeparam name="T">The service that is being mocked.</typeparam>
+            <param name="builder">The builder that is building the binding.</param>
+        </member>
+    </members>
+</doc>
